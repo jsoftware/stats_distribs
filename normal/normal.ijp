@@ -1,0 +1,47 @@
+NB. project file: c:/users/rsherloc/documents/j602-user/jsrc/addons/stats/distribs/normal/normal
+
+coclass 'jproject'
+
+PRIMARYFILES=: 0 : 0
+~Addons/stats/distribs/normal/utils
+~Addons/stats/distribs/normal/standard
+~Addons/stats/distribs/normal/general
+~Addons/stats/distribs/normal/zfns
+)
+
+PRIMARYLIBS=: ''
+
+DEVFILES=: ''
+
+DEVLIBS=: ''
+
+OTHERFILES=: 0 : 0
+~Addons/stats/distribs/normal/test_normal.ijs
+~Addons/stats/distribs/normal/text for wiki page.ijs
+~Addons/stats/distribs/test_normal.ijs
+)
+
+TARGETFILE=: '~Addons/stats/distribs/normal.ijs'
+
+TARGETLOCALE=: 'pnormal'
+
+TARGETHEADER=: 0 : 0
+=======================================================
+Verbs for working with Statistical Distributions
+)
+
+TARGETEXTRA=: ''
+
+BUILDOPTS=: 0 1 0 0 0 0 0
+
+PREBUILDFILE=: ''
+
+POSTBUILDFILE=: ''
+
+TESTFILE=: '~Addons/stats/distribs/normal/test_src.ijs'
+
+NOTES=: ''
+
+VERSION=: ''
+
+WINDOWS=: ''
