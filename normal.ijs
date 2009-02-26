@@ -1,5 +1,10 @@
 NB. =======================================================
-NB. Verbs for working with Statistical Distributions
+NB. Verbs for working with Normal Distributions
+NB. 
+NB. Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
+NB. Ric Sherlock, Brian Schott, Devon McCormick, Zsban Ambrus 
+NB. and others (through the jprogramming forum) contributed functions 
+NB. or concepts used in this script.
 NB. built from project: ~Addons/stats/distribs/normal/normal
 NB. =========================================================
 NB. Utilities
