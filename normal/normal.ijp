@@ -27,7 +27,12 @@ TARGETLOCALE=: 'pnormal'
 
 TARGETHEADER=: 0 : 0
 =======================================================
-Verbs for working with Statistical Distributions
+Verbs for working with Normal Distributions
+
+Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
+Ric Sherlock, Brian Schott, Devon McCormick, Zsban Ambrus 
+and others (through the jprogramming forum) contributed functions 
+or concepts used in this script.
 )
 
 TARGETEXTRA=: ''
