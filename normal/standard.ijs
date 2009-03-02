@@ -10,17 +10,22 @@ erf=: (*&(%:4p_1)%^@:*:)*[:1 H. 1.5*:
 
 erfc=: >:@-@erf  NB. complementary error function
 
-NB.*pnorm01 v Standard normal CDF
+NB. pnormh v Standard normal CDF
 NB. slower but more accurate than pnorm01_f
 NB. ref Abramovitz and Stegum 26.2.29 (solved for P)
 pnormh=: (-: @: >: @ erf @ (%&(%:2))) f.
+
+NB.*pnorm01 Standard normal CDF
+NB. uses more accurate pnormh for y values between _7 & 7.
+NB. uses pnorm01_f for values outside that range where pnormh
+NB. becomes unstable.
 pnorm01=: 3 : 0
   z=. ,y
-  msk=. -. z e. __ _
-  z=. 0 (I. z=__)} z
-  z=. 1 (I. z= _)} z
+  msk=. (_7&<: *. 7&>:) z     NB. between _7 & 7
   n=. pnormh msk#z
   z=. n (I. msk)}z
+  n=. pnorm01_f (-.msk)#z
+  z=. n (I. -.msk)}z
   ($y)$z
 )
 
@@ -30,9 +35,11 @@ pnorm01_f=: 3 : 0
   t=. %>:0.2316419*|y
   c=. %%:o.2
   z=. c*^--:*:y
-  d=. 0 0.319381530 _0.356563782 1.781477937 _1.821255978 1.330274429
-  p=. d p. t
-  (-. r * -.msk) + (r=. z*p) * msk=. y<:0
+  p=. 0 0.319381530 _0.356563782 1.781477937 _1.821255978 1.330274429
+  p=. p p. t
+  msk=. y>0
+  nr=. -. r=. z*p
+  r=. msk } r,:nr  NB. in-place assignment
 )
 
 NB.*qnorm01 v Inverse of standard normal CDF (Quantile function)
