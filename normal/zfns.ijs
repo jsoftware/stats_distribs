@@ -2,7 +2,7 @@ NB. =========================================================
 NB. Export to z locale
 
 dnorm_z_=: dnorm_pnormal_
-pnorm_s_z_=: pnorms_pnormal_
+pnorm_f_z_=: pnorm_f_pnormal_
 pnorm_z_=: pnorm_pnormal_
 pnorm_ut_z_=: pnorm_ut_pnormal_
 qnorm_z_=: qnorm_pnormal_

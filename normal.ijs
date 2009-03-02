@@ -2,9 +2,9 @@ NB. =======================================================
 NB. Verbs for working with Normal Distributions
 NB. 
 NB. Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
-NB. Ric Sherlock, Brian Schott, Devon McCormick, Zsban Ambrus 
-NB. and others (through the jprogramming forum) contributed functions 
-NB. or concepts used in this script.
+NB. Ric Sherlock, Brian Schott, Devon McCormick, Zsban Ambrus and 
+NB. others (through the jprogramming forum) contributed functions 
+NB. or concepts used in this script.)
 NB. built from project: ~Addons/stats/distribs/normal/normal
 NB. =========================================================
 NB. Utilities
@@ -144,20 +144,29 @@ erf=: (*&(%:4p_1)%^@:*:)*[:1 H. 1.5*:
 
 erfc=: >:@-@erf  NB. complementary error function
 
-NB.*pnorm01_s v Standard normal CDF
-NB. slower but more accurate than pnorm01
-NB. ref Abramovitz and Stegum 26.2.29 (solved for P)
-pnorm01_s=: ([: -: 1: + [: erf %&(%:2)) f.
-
 NB.*pnorm01 v Standard normal CDF
-NB. ref Abramovitz and Stegum 26.2.17
+NB. slower but more accurate than pnorm01_f
+NB. ref Abramovitz and Stegum 26.2.29 (solved for P)
+pnormh=: (-: @: >: @ erf @ (%&(%:2))) f.
 pnorm01=: 3 : 0
+  z=. ,y
+  msk=. -. z e. __ _
+  z=. 0 (I. z=__)} z
+  z=. 1 (I. z= _)} z
+  n=. pnormh msk#z
+  z=. n (I. msk)}z
+  ($y)$z
+)
+
+NB.*pnorm01_f v Standard normal CDF
+NB. ref Abramovitz and Stegum 26.2.17
+pnorm01_f=: 3 : 0
   t=. %>:0.2316419*|y
   c=. %%:o.2
   z=. c*^--:*:y
-  p=. t*_1.821255978+t*1.330274429
-  p=. t*0.319381530+t*_0.356563782+t*1.781477937+p
-  ((y >0)*1-z*p) + (y <:0)*z*p
+  d=. 0 0.319381530 _0.356563782 1.781477937 _1.821255978 1.330274429
+  p=. d p. t
+  (-. r * -.msk) + (r=. z*p) * msk=. y<:0
 )
 
 NB.*qnorm01 v Inverse of standard normal CDF (Quantile function)
@@ -192,22 +201,22 @@ dnorm=: 3 : 0
   dnorm x tostd y
 )
 
-NB.*pnorm_s v Normal cumulative distribution function
-NB. slower but more accurate than pnorm
-pnorm_s=: 3 : 0
-  pnorm01_s y
-  :
-  pnorm_s x tostd y
-)
-
 NB.*pnorm v Normal cumulative distribution function
-NB. faster than pnorm_s
-NB. max absolute error < 7.46e_8 for range (_5,5)
-NB. < 0.2 percent relative error.
+NB. slower but more accurate than pnorm_f
 pnorm=: 3 : 0
   pnorm01 y
   :
   pnorm x tostd y
+)
+
+NB.*pnorm_f v Normal cumulative distribution function
+NB. faster than pnorm
+NB. max absolute error < 7.46e_8 for range (_5,5)
+NB. < 0.2 percent relative error.
+pnorm_f=: 3 : 0
+  pnorm01_f y
+  :
+  pnorm_f x tostd y
 )
 
 NB.*pnorm_ut v Upper Tail version of pnorm
@@ -236,7 +245,7 @@ NB. =========================================================
 NB. Export to z locale
 
 dnorm_z_=: dnorm_pnormal_
-pnorm_s_z_=: pnorms_pnormal_
+pnorm_f_z_=: pnorm_f_pnormal_
 pnorm_z_=: pnorm_pnormal_
 pnorm_ut_z_=: pnorm_ut_pnormal_
 qnorm_z_=: qnorm_pnormal_

@@ -8,22 +8,22 @@ dnorm=: 3 : 0
   dnorm x tostd y
 )
 
-NB.*pnorm_s v Normal cumulative distribution function
-NB. slower but more accurate than pnorm
-pnorm_s=: 3 : 0
-  pnorm01_s y
-  :
-  pnorm_s x tostd y
-)
-
 NB.*pnorm v Normal cumulative distribution function
-NB. faster than pnorm_s
-NB. max absolute error < 7.46e_8 for range (_5,5)
-NB. < 0.2 percent relative error.
+NB. slower but more accurate than pnorm_f
 pnorm=: 3 : 0
   pnorm01 y
   :
   pnorm x tostd y
+)
+
+NB.*pnorm_f v Normal cumulative distribution function
+NB. faster than pnorm
+NB. max absolute error < 7.46e_8 for range (_5,5)
+NB. < 0.2 percent relative error.
+pnorm_f=: 3 : 0
+  pnorm01_f y
+  :
+  pnorm_f x tostd y
 )
 
 NB.*pnorm_ut v Upper Tail version of pnorm
