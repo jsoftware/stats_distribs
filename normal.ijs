@@ -156,6 +156,9 @@ erf=: (*&(%:4p_1)%^@:*:)*[:1 H. 1.5*:
 NB. erfc v complementary error function
 erfc=: >:@-@erf  
 
+NB. erfinv v inverse of error function
+erfinv =: (0,%%:2) qnorm 0.5 + -:
+
 NB. pnormh v Standard Normal CDF
 NB. slower but more accurate than pnorm01_f
 NB. ref Abramovitz and Stegum 26.2.29 (solved for P)

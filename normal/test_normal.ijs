@@ -31,7 +31,7 @@ test=: 3 : 0
 
   assert. 1e_10 > |(qnorm@pnorm - ]) t26d1
 
-  assert. 0.01 >|0 1 - (mean , stddev) ,rnorm 3 10000
+  assert. 0.02 >|0 1 - (mean , stddev) ,rnorm 3 10000
 
   NB. check general properties and inclusion of __ 0 1 _ in
   NB. array arguments.  Larger range than above.
