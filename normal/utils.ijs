@@ -23,7 +23,7 @@ tostd=: 4 : 0
   (y-mu)%sigma
 )
 
-NB.*runif01 v Uniform random deviates
+NB. runif01 v Uniform random deviates
 runif01=: ?@$0:
 
 NB. ---------------------------------------------------------

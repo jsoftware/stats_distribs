@@ -35,7 +35,7 @@ tostd=: 4 : 0
   (y-mu)%sigma
 )
 
-NB.*runif01 v Uniform random deviates
+NB. runif01 v Uniform random deviates
 runif01=: ?@$0:
 
 NB. ---------------------------------------------------------
@@ -144,23 +144,24 @@ ndx=: 3 : 0
 )
 
 NB. =========================================================
-NB. Standard normal distribution
+NB. Standard Normal distribution
 
-NB.*dnorm01 v Standard normal PDF
+NB. dnorm01 v Standard Normal PDF
 dnorm01=: (% %: 2p1) * ^@:(_0.5 * *:)
 
-NB. error function
+NB. erf v error function
 NB. ref Abramovitz and Stegum 7.1.21 (right)
 erf=: (*&(%:4p_1)%^@:*:)*[:1 H. 1.5*:
 
-erfc=: >:@-@erf  NB. complementary error function
+NB. erfc v complementary error function
+erfc=: >:@-@erf  
 
-NB. pnormh v Standard normal CDF
+NB. pnormh v Standard Normal CDF
 NB. slower but more accurate than pnorm01_f
 NB. ref Abramovitz and Stegum 26.2.29 (solved for P)
 pnormh=: (-: @: >: @ erf @ (%&(%:2))) f.
 
-NB.*pnorm01 Standard normal CDF
+NB. pnorm01 v Standard Normal CDF
 NB. uses more accurate pnormh for y values between _7 & 7.
 NB. uses pnorm01_f for values outside that range where pnormh
 NB. becomes unstable.
@@ -174,7 +175,7 @@ pnorm01=: 3 : 0
   ($y)$z
 )
 
-NB.*pnorm01_f v Standard normal CDF
+NB. pnorm01_f v Standard Normal CDF
 NB. ref Abramovitz and Stegum 26.2.17
 pnorm01_f=: 3 : 0
   t=. %>:0.2316419*|y
@@ -187,7 +188,7 @@ pnorm01_f=: 3 : 0
   r=. msk } r,:nr  NB. in-place assignment
 )
 
-NB.*qnorm01 v Inverse of standard normal CDF (Quantile function)
+NB. qnorm01 v Inverse of Standard Normal CDF (Quantile function)
 NB. Z is accurate to about 1 part in 10^16.
 NB. ref ALGORITHM AS241  APPL. STATIST. (1988) VOL. 37, NO. 3
 qnorm01=: 3 : 0
@@ -204,7 +205,7 @@ qnorm01=: 3 : 0
 NB. BM v Box-Mueller
 BM=. ((2 1 o."0 1 (2p1) * runif01) *"1 [: %: _2&*@:^.@:runif01)
 
-NB.*rnorm01 v Random deviates from standard normal
+NB. rnorm01 v Random deviates from Standard Normal
 NB. y is: shape of desired result array
 rnorm01=: ] $ ,@BM@>.@-:@(*/) f.
 
