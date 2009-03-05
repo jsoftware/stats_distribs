@@ -3,14 +3,17 @@
 '''stats/distribs''' - Working with distributions
 
  * Includes verbs for working with the Normal distribution
+ * Other distrbutions are planned but contributions are very welcome!
 
-Browse history, source and examples using [[JTracAddons:stats/distribs/|Trac]].
+Browse history, source and examples using [[JSVNAddons:stats/distribs/|Trac]].
 
 <<TableOfContents>>
 
 == Verbs available ==
 
 === Normal Distribution ===
+
+''Defined in `z` locale''
 ||''`tomusigma`'' ||v||Converts from N[0,1] to N[mu,sigma]||
 ||''`tostd`''     ||v||Converts from N[mu,sigma] to N[0,1]||
 ||''`dnorm`''     ||v||Normal probability density function||
@@ -20,6 +23,11 @@ Browse history, source and examples using [[JTracAddons:stats/distribs/|Trac]].
 ||''`qnorm`''     ||v||Quantile function for Normal distribution||
 ||''`qnorm_ut`''  ||v||Upper Tail version of qnorm||
 ||''`rnorm`''     ||v||Random deviates from Normal distribution||
+
+''Available in `pnormal` locale ''
+||''`erf`''      ||v||Error function||
+||''`erfc`''     ||v||Complementary Error function||
+||''`erfinv`''   ||v||Inverse of Error function||
 
 == Installation ==
 
@@ -193,4 +201,4 @@ rnorm01=: 3 : 0
  * [[EwartShaw/N01CdfInv]]
 
 == Contributed by ==
-  FraserJackson and RicSherlock
+  RicSherlock and FraserJackson
