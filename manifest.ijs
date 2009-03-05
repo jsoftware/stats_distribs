@@ -1,17 +1,17 @@
 NB. stats/distribs manifest
 
-CAPTION=: 'Scripts for working with distributions'
+CAPTION=: 'Verbs for working with distributions'
 
 DESCRIPTION=: 0 : 0
 Verbs for working with statistical distributions.
-Includes normally distributed populations.
+Currently covers normally distributed populations.
 
-Addon compiled by Ric Sherlock & Fraser Jackson from many contributions by the J community. 
+Addon compiled by Ric Sherlock & Fraser Jackson from many contributions by the J community.
 )
 
 LABCATEGORY=: 'Stats'
 
-NB.VERSION=: '1.0.0'
+VERSION=: '1.0.0'
 
 RELEASE=: 'j602'
 
