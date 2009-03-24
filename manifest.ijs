@@ -22,5 +22,7 @@ history.txt
 manifest.ijs
 distribs.ijs
 normal.ijs
+uniform.ijs
 test_normal.ijs
+test_uniform.ijs
 )

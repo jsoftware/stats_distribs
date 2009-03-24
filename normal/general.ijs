@@ -4,7 +4,7 @@ NB. General Normal distribution
 NB.*dnorm v Normal probability density function
 NB. returns: values (heights) of Normal PDF at y
 NB. eg: 0.241971 = dnorm 1  and  0.241971 = 2 1 dnorm 3
-NB. y is: numeric array of values to calculate Z(x) for.
+NB. y is: numeric array of values to calculate Z(y) for.
 NB. x is: optional 2-item numeric list (default is 0 1)
 NB.    0{x is mean of popln from which y values were taken
 NB.    1{x is stddev of popln from which y values were taken
@@ -17,7 +17,7 @@ dnorm=: 3 : 0
 NB.*pnorm v Normal cumulative distribution function
 NB. returns: probability of value occuring below each y value
 NB. eg: 0 = pnorm __   and 0.5 = pnorm 0
-NB. y is: numeric array of values to calculate P(x) for.
+NB. y is: numeric array of values to calculate P(y) for.
 NB. x is: optional 2-item numeric list (default is 0 1)
 NB.    0{x is mean of popln from which y values were taken
 NB.    1{x is stddev of popln from which y values were taken
