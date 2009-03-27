@@ -11,7 +11,7 @@ Addon compiled by Ric Sherlock & Fraser Jackson from many contributions by the J
 
 LABCATEGORY=: 'Stats'
 
-VERSION=: '1.0.0'
+VERSION=: '1.0.1'
 
 RELEASE=: 'j602'
 
