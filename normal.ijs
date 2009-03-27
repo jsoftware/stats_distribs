@@ -1,5 +1,9 @@
 NB. =======================================================
-NB. Verbs for working with Normal Distributions
+NB. Normal Distribution
+NB. These functions provide information about the 
+NB. normal distribution for mean mu and standard deviation sigma.
+NB. If mu or sigma are not specified they assume the 
+NB. default values of 0 and 1 respectively.
 NB. 
 NB. Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
 NB. Ric Sherlock, Brian Schott, Devon McCormick, Roger Hui, 
@@ -10,7 +14,7 @@ NB. built from project: ~Addons/stats/distribs/normal/normal
 NB. =========================================================
 NB. Utilities
 
-coclass 'pnormal'
+coclass 'pdistribs'
 
 
 NB.*tomusigma v Converts from N[0,1] to N[mu,sigma]
@@ -228,7 +232,7 @@ NB.    1{x is stddev of popln from which y values were taken
 dnorm=: 3 : 0
   dnorm01 y
   :
-  dnorm x tostd y
+  (dnorm x tostd y) % {:x
 )
 
 NB.*pnorm v Normal cumulative distribution function
@@ -297,13 +301,13 @@ rnorm=: 3 : 0
 NB. =========================================================
 NB. Export to z locale
 
-dnorm_z_=: dnorm_pnormal_
-pnorm_f_z_=: pnorm_f_pnormal_
-pnorm_z_=: pnorm_pnormal_
-pnorm_ut_z_=: pnorm_ut_pnormal_
-qnorm_z_=: qnorm_pnormal_
-qnorm_ut_z_=: qnorm_ut_pnormal_
-rnorm_z_=: rnorm_pnormal_
-tomusigma_z_=: tomusigma_pnormal_
-tostd_z_=: tostd_pnormal_
+dnorm_z_=: dnorm_pdistribs_
+pnorm_f_z_=: pnorm_f_pdistribs_
+pnorm_z_=: pnorm_pdistribs_
+pnorm_ut_z_=: pnorm_ut_pdistribs_
+qnorm_z_=: qnorm_pdistribs_
+qnorm_ut_z_=: qnorm_ut_pdistribs_
+rnorm_z_=: rnorm_pdistribs_
+tomusigma_z_=: tomusigma_pdistribs_
+tostd_z_=: tostd_pdistribs_
 

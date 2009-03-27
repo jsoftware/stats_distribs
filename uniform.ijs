@@ -4,14 +4,9 @@ NB.  uniform distribution on the interval from min to max.
 NB.  If min or max are not specified they assume the 
 NB.  default values of 0 and 1 respectively. 
 
-NB.  We follow the same conventions as R but return 
-NB.  an assertion error where R returns NaN or the 
-NB.  argument is out of range.
-
-NB.  For the uniform distribution the density is defined
-NB.  as the limit at the extreme values except when 
-NB.  the distribution is concentrated at a point which
-NB.  returns an assertion error
+NB. An assertion error is returned where an argument or part
+NB. of an argument is out of range. Otherwise results are 
+NB. comparable to those for R.
 
 coclass 'pdistribs'
 
@@ -61,7 +56,7 @@ NB. y is: numeric array of values to calculate Z(y) for.
 NB. x is: optional 2-item numeric list (default is 0 1)
 NB.       0{x min value of popln from which y values were taken
 NB.       1{x max value of popln from which y values were taken
-NB.       min < max
+NB. dunif is not defined if min >: max
 dunif=: 3 : 0
   dunif01 y
   :
@@ -74,11 +69,12 @@ dunif=: 3 : 0
 NB.*punif v Uniform cumulative distribution function
 NB. (Probability integral of uniform distribution)
 NB. returns: probability of value occuring below each y value
-NB. eg: 0 = pnorm 0   and 0.5 = 2 4 punif 3
+NB. eg: 0 = punif 0   and 0.5 = 2 4 punif 3
 NB. y is: numeric array of values to calculate P(y) for.
 NB. x is: optional 2-item numeric list (default is 0 1)
 NB.       0{x min value of popln from which y values were taken
 NB.       1{x max value of popln from which y values were taken
+NB. If min=max  For y<min  0=punif y  and  y>:min  1=punif y
 punif =: 3 : 0
   punif01 y
   :
@@ -93,6 +89,7 @@ NB. y is: numeric array of probabilities from 0 to 1
 NB. x is: optional 2-item numeric list (default is 0 1)
 NB.       0{x min value of result popln
 NB.       1{x max value of result popln
+NB. qunif is only defined over the closed interval [0,1]
 qunif=: 3 : 0
   qunif01 y
   :
@@ -106,6 +103,9 @@ NB. y is: numeric list specifying shape of result
 NB. x is: optional 2-item numeric list (default is 0 1)
 NB.       0{x min value of result popln
 NB.       1{x max value of result popln
+NB. runif will not generate the extreme values in the monadic case
+NB. In the dyadic case some generated values very close to 
+NB. the extremes of the range may round to 0 or 1.
 runif =: 3 : 0
   runif01 y
   :

@@ -11,7 +11,7 @@ NB.    1{x is stddev of popln from which y values were taken
 dnorm=: 3 : 0
   dnorm01 y
   :
-  dnorm x tostd y
+  (dnorm x tostd y) % {:x
 )
 
 NB.*pnorm v Normal cumulative distribution function

@@ -25,9 +25,9 @@ test=: 3 : 0
   assert. 1e_10 > |pt26d1 - pnorm t26d1
   assert. 1e_10 > |(-.pt26d1) - pnorm -t26d1
 
-  assert. 1e_10 > |pt26d1 - pnorm01_pnormal_ t26d1
-  assert. 1e_7 > |pt26d1 - pnorm01_f_pnormal_ t26d1
-  assert. 1e_10 > | t7d1 - erf_pnormal_ 0 1 2 1.96
+  assert. 1e_10 > |pt26d1 - pnorm01_pdistribs_ t26d1
+  assert. 1e_7 > |pt26d1 - pnorm01_f_pdistribs_ t26d1
+  assert. 1e_10 > | t7d1 - erf_pdistribs_ 0 1 2 1.96
 
   assert. 1e_10 > |(qnorm@pnorm - ]) t26d1
 
@@ -57,7 +57,7 @@ test=: 3 : 0
   assert. 3 10000 = $ rnorm 3 10000
 
   NB. test dyadic pnorm dnorm qnorm
-  assert. (1 2 dnorm z) = dnorm 1 2 tostd z
+  assert. (1 2 dnorm z) = 2 %~ dnorm 1 2 tostd z
   assert. (1 2 pnorm z) = pnorm 1 2 tostd z
   assert. (1 2 qnorm p) = 1 2 tomusigma qnorm p
 

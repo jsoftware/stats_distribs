@@ -2,7 +2,8 @@ stats/distribs - change history
 
 == 1.0.1 ==
  * add: Uniform distribution script
- * chg: locale for normal verbs
+ * chg: locale for Normal verbs
+ * fix: bug in dyadic dnorm
 
 == 1.0.0 ==
  * First published in JAL
