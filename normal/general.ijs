@@ -63,7 +63,7 @@ NB.*qnorm_ut v Upper Tail version of qnorm
 NB. see qnorm but returns values *above* which the probability of a value occuring are y
 qnorm_ut=: [: - qnorm
 
-NB.*rnorm v Random deviates from Normal distribution
+NB.*rnorm v Generates random deviates from Normal distribution
 NB. returns: shape y array of random deviates from normal distribution with mean & stddev x
 NB. eg: 3 = $23.5 4.2 rnorm 3
 NB. y is: numeric list specifying shape of result

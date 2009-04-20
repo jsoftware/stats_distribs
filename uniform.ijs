@@ -96,7 +96,7 @@ qunif=: 3 : 0
   x fromunif01 qunif y
 )
 
-NB.*runif v  Generates random deviates from uniform distrition
+NB.*runif v Generates random deviates from uniform distribution
 NB. returns: shape y array of random deviates from uniform distribution.
 NB. eg: 3 = $4 7 runif 3
 NB. y is: numeric list specifying shape of result
