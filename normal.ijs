@@ -1,21 +1,21 @@
+NB. built from project: ~Addons/stats/distribs/normal/normal
 NB. =======================================================
 NB. Normal Distribution
 NB. These functions provide information about the 
 NB. normal distribution for mean mu and standard deviation sigma.
 NB. If mu or sigma are not specified they assume the 
 NB. default values of 0 and 1 respectively.
-NB. 
+NB.
 NB. Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
 NB. Ric Sherlock, Brian Schott, Devon McCormick, Roger Hui, 
 NB. Zsban Ambrus and others (through the jprogramming forum) 
 NB. contributed functions or concepts used in this script.)
-NB. 
-NB. built from project: ~Addons/stats/distribs/normal/normal
-NB. =========================================================
-NB. Utilities
+
 
 coclass 'pdistribs'
 
+NB. =========================================================
+NB. Utilities
 
 NB.*tomusigma v Converts from N[0,1] to N[mu,sigma]
 NB. returns: rescaled numeric array adjusted by mean mu & 
@@ -148,6 +148,7 @@ ndx=: 3 : 0
   st=. (st * *@qfp) msk#y
   s=. st (I. msk)}s
 )
+
 
 NB. =========================================================
 NB. Standard Normal distribution

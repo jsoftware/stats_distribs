@@ -3,6 +3,7 @@ NB. project file: c:/users/rsherloc/documents/j602-user/jsrc/addons/stats/distri
 coclass 'jproject'
 
 PRIMARYFILES=: 0 : 0
+~Addons/stats/distribs/normal/init
 ~Addons/stats/distribs/normal/utils
 ~Addons/stats/distribs/normal/standard
 ~Addons/stats/distribs/normal/general
@@ -23,22 +24,9 @@ OTHERFILES=: 0 : 0
 
 TARGETFILE=: '~Addons/stats/distribs/normal.ijs'
 
-TARGETLOCALE=: 'pdistribs'
+TARGETLOCALE=: ''
 
-TARGETHEADER=: 0 : 0
-=======================================================
-Normal Distribution
-These functions provide information about the 
-normal distribution for mean mu and standard deviation sigma.
-If mu or sigma are not specified they assume the 
-default values of 0 and 1 respectively.
-
-Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
-Ric Sherlock, Brian Schott, Devon McCormick, Roger Hui, 
-Zsban Ambrus and others (through the jprogramming forum) 
-contributed functions or concepts used in this script.)
-
-)
+TARGETHEADER=: ''
 
 TARGETEXTRA=: ''
 
