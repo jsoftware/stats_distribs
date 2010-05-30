@@ -56,7 +56,7 @@ qnorm01=: 3 : 0
   z=. __ (I. z=0)} z
   z=. _ (I. z=1)} z
   n=. ndx msk#z
-  z=. n (I. msk)}z   NB. amend values to z
+  z=. n (I. msk)}z         NB. amend values to z
   ($y)$z
 )
 

@@ -123,12 +123,12 @@ nd3fr=: (ratEF@-&SPLIT2) f.
 NB. ndx v calculates qnorm01 based on numerical category of ys
 ndx=: 3 : 0
   s=. ($y)$0
-  msk=. (SPLIT1 < |@qfp) y  NB. is y pretty close to 0 or 1?
-  s=. (nd1 (-.msk)#y) (I.-.msk)}s  NB. no
-  st=. r2fp msk#y                  NB. yes pretty close
-  msk2=. st > SPLIT2        NB. is y really close to 0 or 1?
-  st=. (nd2fr (-.msk2)#st) (I. -.msk2)}st NB. no
-  st=. (nd3fr    msk2 #st)   (I. msk2)}st NB. yes very close
+  msk=. (SPLIT1 < |@qfp) y               NB. is y pretty close to 0 or 1?
+  s=. (nd1 (-.msk)#y) (I.-.msk)}s          NB. no
+  st=. r2fp msk#y                          NB. yes pretty close
+  msk2=. st > SPLIT2                     NB. is y really close to 0 or 1?
+  st=. (nd2fr (-.msk2)#st) (I. -.msk2)}st  NB. no
+  st=. (nd3fr    msk2 #st)   (I. msk2)}st  NB. yes very close
   st=. (st * *@qfp) msk#y
   s=. st (I. msk)}s
 )

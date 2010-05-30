@@ -1,5 +1,6 @@
 NB. =======================================================
-NB. Normal Distribution
+NB. stats/distribs/normal
+NB. Functions for working with the Normal distribution
 NB. These functions provide information about the 
 NB. normal distribution for mean mu and standard deviation sigma.
 NB. If mu or sigma are not specified they assume the 

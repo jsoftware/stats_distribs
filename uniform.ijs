@@ -1,8 +1,10 @@
-NB.  Uniform distribution
-NB.  These functions provide information about the 
-NB.  uniform distribution on the interval from min to max. 
-NB.  If min or max are not specified they assume the 
-NB.  default values of 0 and 1 respectively. 
+NB. =========================================================
+NB. stats/distribs/uniform
+NB. Functions for working with the Uniform distribution
+NB. These functions provide information about the 
+NB. uniform distribution on the interval from min to max. 
+NB. If min or max are not specified they assume the 
+NB. default values of 0 and 1 respectively. 
 
 NB. An assertion error is returned where an argument or part
 NB. of an argument is out of range. Otherwise results are 
