@@ -1,6 +1,7 @@
 stats/distribs - change history
 
 == 1.0.2 ==
+ * chg: update for j701
  * fix: typo in test_normal 
 
 == 1.0.1 ==

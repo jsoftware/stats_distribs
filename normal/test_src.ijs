@@ -1,4 +1,5 @@
 NB. test
+NB.!not required for J7 Proj Manager
 buildproject_jproject_ ''
 loadtarget_jproject_ ''
 TestPath=. getpath_j_ (#getpath_j_ PROJECTFILE_jproject_)}.TESTFILE_jproject_

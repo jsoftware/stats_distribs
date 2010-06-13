@@ -4,7 +4,7 @@ CAPTION=: 'Verbs for working with distributions'
 
 DESCRIPTION=: 0 : 0
 Verbs for working with statistical distributions.
-Currently covers normally distributed populations.
+Currently covers normal and uniform distributions.
 
 Addon compiled by Ric Sherlock & Fraser Jackson from many contributions by the J community.
 )

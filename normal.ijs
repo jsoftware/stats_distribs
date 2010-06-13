@@ -1,4 +1,3 @@
-NB. built from project: ~Addons/stats/distribs/normal/normal
 NB. =======================================================
 NB. stats/distribs/normal
 NB. Functions for working with the Normal distribution
@@ -12,9 +11,7 @@ NB. Ric Sherlock, Brian Schott, Devon McCormick, Roger Hui,
 NB. Zsban Ambrus and others (through the jprogramming forum) 
 NB. contributed functions or concepts used in this script.)
 
-
 coclass 'pdistribs'
-
 NB. =========================================================
 NB. Utilities
 
@@ -149,8 +146,6 @@ ndx=: 3 : 0
   st=. (st * *@qfp) msk#y
   s=. st (I. msk)}s
 )
-
-
 NB. =========================================================
 NB. Standard Normal distribution
 
@@ -219,8 +214,6 @@ BM=. ((2 1 o."0 1 (2p1) * runif01) *"1 [: %: _2&*@:^.@:runif01)
 NB. rnorm01 v Random deviates from Standard Normal
 NB. y is: shape of desired result array
 rnorm01=: ] $ ,@BM@>.@-:@(*/) f.
-
-
 NB. =========================================================
 NB. General Normal distribution
 
@@ -298,8 +291,6 @@ rnorm=: 3 : 0
   :
   x tomusigma rnorm y
 )
-
-
 NB. =========================================================
 NB. Export to z locale
 
@@ -312,4 +303,3 @@ qnorm_ut_z_=: qnorm_ut_pdistribs_
 rnorm_z_=: rnorm_pdistribs_
 tomusigma_z_=: tomusigma_pdistribs_
 tostd_z_=: tostd_pdistribs_
-
