@@ -11,9 +11,9 @@ Addon compiled by Ric Sherlock & Fraser Jackson from many contributions by the J
 
 LABCATEGORY=: 'Stats'
 
-VERSION=: '1.0.1'
+VERSION=: '1.0.2'
 
-RELEASE=: 'j602'
+RELEASE=: 'j602 j701'
 
 PLATFORMS=: 'win linux darwin'
 
