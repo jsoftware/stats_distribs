@@ -11,14 +11,14 @@ Addon compiled by Ric Sherlock & Fraser Jackson from many contributions by the J
 
 LABCATEGORY=: 'Stats'
 
-VERSION=: '1.0.8'
+VERSION=: '1.0.9'
 
 RELEASE=: 'j602 j701 j801 j802 j803 j804'
 
 PLATFORMS=: ''
 
 DEPENDS=: 0 : 0
-stats/base/univariate
+stats/base
 )
 
 FILES=: 0 : 0

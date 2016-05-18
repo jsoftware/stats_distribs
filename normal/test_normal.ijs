@@ -5,8 +5,6 @@ Note 'To run all tests:'
   load 'stats/distribs/test_normal'
 )
 
-require 'stats/base/univariate'
-
 NB. make nouns for testing
   NB. from Handbook of Mathematical Functions by Abramowitz and Stegun, Table 26.1 and Table 7.1.
    t26d1=: 0 0.5 0.9 1 1.34 1.96 2 2.58 3.25 4.45 5

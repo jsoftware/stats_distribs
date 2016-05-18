@@ -12,6 +12,7 @@ NB. Zsban Ambrus and others (through the jprogramming forum)
 NB. contributed functions or concepts used in this script.)
 
 coclass 'pdistribs'
+require 'stats/base/univariate'
 NB. =========================================================
 NB. Utilities
 
