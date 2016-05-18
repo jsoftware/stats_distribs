@@ -1,14 +1,14 @@
 NB. =======================================================
 NB. stats/distribs/normal
 NB. Functions for working with the Normal distribution
-NB. These functions provide information about the 
+NB. These functions provide information about the
 NB. normal distribution for mean mu and standard deviation sigma.
-NB. If mu or sigma are not specified they assume the 
+NB. If mu or sigma are not specified they assume the
 NB. default values of 0 and 1 respectively.
 NB.
-NB. Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson, 
-NB. Ric Sherlock, Brian Schott, Devon McCormick, Roger Hui, 
-NB. Zsban Ambrus and others (through the jprogramming forum) 
+NB. Ewart Shaw (Vector 18(4) and elsewhere), Fraser Jackson,
+NB. Ric Sherlock, Brian Schott, Devon McCormick, Roger Hui,
+NB. Zsban Ambrus and others (through the jprogramming forum)
 NB. contributed functions or concepts used in this script.)
 
 coclass 'pdistribs'
@@ -16,7 +16,7 @@ NB. =========================================================
 NB. Utilities
 
 NB.*tomusigma v Converts from N[0,1] to N[mu,sigma]
-NB. returns: rescaled numeric array adjusted by mean mu & 
+NB. returns: rescaled numeric array adjusted by mean mu &
 NB.          stddev sigma
 NB. y is: numeric array
 NB. x is: 2-item numeric list
@@ -28,13 +28,15 @@ tomusigma=: 4 : 0
 )
 
 NB.*tostd v Converts from N[mu,sigma] to N[0,1]
-NB. returns: rescaled numeric array adjusted for mean mu & 
+NB. returns: rescaled numeric array adjusted for mean mu &
 NB.          stddev sigma
 NB. y is: numeric array
 NB. x is: 2-item numeric list
 NB.    0{x mean to adjust for
 NB.    1{x stddev to adjust for
-tostd=: 4 : 0
+tostd=: 3 : 0
+  ((mean,stddev)y) tostd y
+:
   'mu sigma'=. x
   (y-mu)%sigma
 )
@@ -157,7 +159,7 @@ NB. ref Abramovitz and Stegum 7.1.21 (right)
 erf=: (*&(%:4p_1)%^@:*:)*[:1 H. 1.5*:
 
 NB. erfc v complementary error function
-erfc=: >:@-@erf  
+erfc=: >:@-@erf
 
 NB. erfinv v inverse of error function
 erfinv =: (0,%%:2) qnorm 0.5 + -:
@@ -256,7 +258,7 @@ pnorm_f=: 3 : 0
 )
 
 NB.*pnorm_ut v Upper Tail version of pnorm
-NB. see pnorm but returns probability of a 
+NB. see pnorm but returns probability of a
 NB.   value occuring *above* each y value
 NB. eg: 1 = pnorm_ut __ and 0.5 = pnorm_ut 0
 pnorm_ut=: [: -. pnorm

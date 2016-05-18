@@ -8,9 +8,9 @@ Note 'To run all tests:'
 require 'stats/base/univariate'
 
 NB. make nouns for testing
-  NB. from Handbook of Mathematical Functions by Abramowitz and Stegun, Table 26.1 and Table 7.1. 
+  NB. from Handbook of Mathematical Functions by Abramowitz and Stegun, Table 26.1 and Table 7.1.
    t26d1=: 0 0.5 0.9 1 1.34 1.96 2 2.58 3.25 4.45 5
-  pt26d1=: 0.5 0.691462461274013 0.815939874653241 0.841344746068543 0.909877327535548 0.97500210485178 
+  pt26d1=: 0.5 0.691462461274013 0.815939874653241 0.841344746068543 0.909877327535548 0.97500210485178
   pt26d1=: pt26d1, 0.977249868051821 0.99505998424223 0.9994229750 0.9999957065 0.9999997133
   zt26d1=: 0.398942280401433 0.352065326764299 0.266085249898755 0.241970724519143 0.162555055225534 0.058440944333451
   zt26d1=: zt26d1,0.053990966513188 0.014305108994150 0.002029048057 0.00001999179671 0.00000148619515
@@ -50,10 +50,10 @@ test=: 3 : 0
 
   NB. check that shape of y is retained in results for dnorm, pnorm, qnorm
   assert. ($w) = $dnorm w =. 2 2 2 2 2$ z,-z
-  assert. ($w) = $pnorm w 
+  assert. ($w) = $pnorm w
   assert. ($w) = $qnorm w =. 2 5 11$p
 
-  NB. check that $ of result = y for rnorm 
+  NB. check that $ of result = y for rnorm
   assert. 3 10000 = $ rnorm 3 10000
 
   NB. test dyadic pnorm dnorm qnorm

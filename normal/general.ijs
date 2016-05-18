@@ -40,7 +40,7 @@ pnorm_f=: 3 : 0
 )
 
 NB.*pnorm_ut v Upper Tail version of pnorm
-NB. see pnorm but returns probability of a 
+NB. see pnorm but returns probability of a
 NB.   value occuring *above* each y value
 NB. eg: 1 = pnorm_ut __ and 0.5 = pnorm_ut 0
 pnorm_ut=: [: -. pnorm
