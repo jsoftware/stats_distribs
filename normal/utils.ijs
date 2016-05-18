@@ -2,7 +2,7 @@ NB. =========================================================
 NB. Utilities
 
 NB.*tomusigma v Converts from N[0,1] to N[mu,sigma]
-NB. returns: rescaled numeric array adjusted by mean mu & 
+NB. returns: rescaled numeric array adjusted by mean mu &
 NB.          stddev sigma
 NB. y is: numeric array
 NB. x is: 2-item numeric list
@@ -14,13 +14,15 @@ tomusigma=: 4 : 0
 )
 
 NB.*tostd v Converts from N[mu,sigma] to N[0,1]
-NB. returns: rescaled numeric array adjusted for mean mu & 
+NB. returns: rescaled numeric array adjusted for mean mu &
 NB.          stddev sigma
 NB. y is: numeric array
 NB. x is: 2-item numeric list
 NB.    0{x mean to adjust for
 NB.    1{x stddev to adjust for
-tostd=: 4 : 0
+tostd=: 3 : 0
+  ((mean,stddev)y) tostd y
+:
   'mu sigma'=. x
   (y-mu)%sigma
 )

@@ -17,6 +17,10 @@ RELEASE=: 'j602 j701 j801 j802 j803 j804'
 
 PLATFORMS=: ''
 
+DEPENDS=: 0 : 0
+stats/base/univariate
+)
+
 FILES=: 0 : 0
 history.txt
 manifest.ijs
